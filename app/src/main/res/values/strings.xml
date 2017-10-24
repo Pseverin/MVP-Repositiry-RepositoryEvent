@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MVP-Repository-RepositoryEvent</string>
+    <string name="please_wait">Please, wait…</string>
+    <string name="something_going_wrong">Something went wrong, please try again later</string>
+    <string name="no_internet_connection">No active internet connection found. Please, check internet connectivity and try again.</string>
+    <string name="search">Search</string>
+    <string name="enter_city">Enter city</string>
+    <string name="min_temp">Min temp</string>
+    <string name="max_temp">Max temp</string>
+    <string name="try_another_city_name">Try another city name</string>
+</resources>
