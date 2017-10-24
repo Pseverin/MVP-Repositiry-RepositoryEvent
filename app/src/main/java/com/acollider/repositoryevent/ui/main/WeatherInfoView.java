@@ -9,5 +9,6 @@ import com.acollider.repositoryevent.ui.common.CommonView;
  */
 public interface WeatherInfoView extends CommonView {
 
-    void fillWithWeatherData(String cityName, String minTemp, String maxTemp);
+    void fillWithWeatherData(String cityName, String minTemp, String maxTemp,
+                             String weatherType, String windSpeed);
 }

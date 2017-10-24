@@ -28,7 +28,8 @@ public class WeatherInfoPresenter extends CommonPresenterImpl<WeatherInfoView> {
                 WeatherData weatherData = weatherDataPair.getValue1();
 
                 getViewOptional().ifPresent(view ->
-                    view.fillWithWeatherData(city, weatherData.minTemp, weatherData.maxTemp));
+                    view.fillWithWeatherData(city, weatherData.minTemp, weatherData.maxTemp,
+                        weatherData.weatherType, weatherData.windSpeed));
             }, getUiBlockHandler()), getErrorConsumer());
     }
 }

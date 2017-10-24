@@ -33,6 +33,12 @@ public class WeatherInfoActivity extends CommonActivity implements WeatherInfoVi
     @BindView(R.id.tv_city_name)
     TextView tvCityName;
 
+    @BindView(R.id.tv_weather_type)
+    TextView tvWeatherType;
+
+    @BindView(R.id.tv_wind_speed)
+    TextView tvWindSpeed;
+
     @Inject
     WeatherInfoPresenter presenter;
 
@@ -76,10 +82,13 @@ public class WeatherInfoActivity extends CommonActivity implements WeatherInfoVi
     }
 
     @Override
-    public void fillWithWeatherData(String cityName, String minTemp, String maxTemp) {
+    public void fillWithWeatherData(String cityName, String minTemp, String maxTemp,
+                                    String weatherType, String windSpeed) {
         tvCityName.setText(cityName);
         tvMinTemp.setText(minTemp);
         tvMaxTemp.setText(maxTemp);
+        tvWeatherType.setText(weatherType);
+        tvWindSpeed.setText(windSpeed);
     }
 
     @PerInstance

@@ -8,4 +8,6 @@
     <string name="min_temp">Min temp</string>
     <string name="max_temp">Max temp</string>
     <string name="try_another_city_name">Try another city name</string>
+    <string name="wind_speed">Wind speed</string>
+    <string name="weather_type">Weather type</string>
 </resources>

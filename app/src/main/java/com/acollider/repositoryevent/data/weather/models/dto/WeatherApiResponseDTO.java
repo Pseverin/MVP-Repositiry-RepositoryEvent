@@ -52,6 +52,7 @@ public class WeatherApiResponseDTO {
 
     public WeatherData toWeatherData() {
         return Stream.of(consolidatedWeather).findFirst().map(weather ->
-            new WeatherData(weather.getMinTemp(), weather.getMaxTemp())).orElse(null);
+            new WeatherData(weather.getMinTemp(), weather.getMaxTemp(),
+                weather.getWeatherStateName(), weather.getWindSpeed())).orElse(null);
     }
 }

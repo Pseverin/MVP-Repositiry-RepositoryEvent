@@ -9,9 +9,13 @@ public class WeatherData {
 
     public final String minTemp;
     public final String maxTemp;
+    public final String weatherType;
+    public final String windSpeed;
 
-    public WeatherData(Float minTemp, Float maxTemp) {
+    public WeatherData(Float minTemp, Float maxTemp, String weatherType, Float windSpeed) {
         this.minTemp = minTemp.toString();
         this.maxTemp = maxTemp.toString();
+        this.weatherType = weatherType;
+        this.windSpeed = windSpeed.toString();
     }
 }
