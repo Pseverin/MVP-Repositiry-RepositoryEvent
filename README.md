@@ -1,6 +1,6 @@
 # View-Presenter-Repository + Repository event architechture
-
 Here you can find an example app, that implements improved variant of MVP architechture.
+
 ---------------
 
 ![Examples](/FusedLocationAPIWrapper/resources/sample_app_screen_1.png?raw=true "Title") 
