@@ -1,4 +1,4 @@
-# View-Presenter-Repository + Repository event architechture
+# View-Presenter-Repository + RepositoryEvent architechture
 Here you can find an example app, that implements improved variant of MVP architechture.
 
 ![diagram_1](/resources/diagram_1.png?raw=true)
