@@ -89,7 +89,7 @@ public class RepositoryEvent<T> {
         return ofNullable(getData()).map(mapper::call).orElse(Observable.just(new RepositoryEvent<>(eventType, null)));
     }
 
-    public Observable<RepositoryEvent<T>> toFlowable() {
+    public Observable<RepositoryEvent<T>> toObservable() {
         return Observable.just(this);
     }
 

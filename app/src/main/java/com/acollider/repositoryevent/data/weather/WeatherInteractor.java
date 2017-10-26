@@ -6,6 +6,7 @@ import com.acollider.repositoryevent.R;
 import com.acollider.repositoryevent.data.weather.models.WeatherData;
 import com.acollider.repositoryevent.data.weather.models.dto.GetLocationApiResponseDTO;
 import com.acollider.repositoryevent.data.weather.repository.WeatherApiRepository;
+import com.acollider.repositoryevent.data.weather.repository.WeatherMemoryRepository;
 import com.acollider.repositoryevent.other.RepositoryEvent;
 import com.acollider.repositoryevent.other.exceptions.UserReadableException;
 import com.annimon.stream.Optional;
@@ -24,10 +25,14 @@ import io.reactivex.Observable;
 public class WeatherInteractor {
 
     private WeatherApiRepository weatherApiRepository;
+    private WeatherMemoryRepository weatherMemoryRepository;
     private Resources resources;
 
-    public WeatherInteractor(Resources resources, WeatherApiRepository weatherApiRepository) {
+    public WeatherInteractor(Resources resources,
+                             WeatherApiRepository weatherApiRepository,
+                             WeatherMemoryRepository weatherMemoryRepository) {
         this.weatherApiRepository = weatherApiRepository;
+        this.weatherMemoryRepository = weatherMemoryRepository;
         this.resources = resources;
     }
 
@@ -42,6 +47,8 @@ public class WeatherInteractor {
                                 Pair.with(location.getTitle(), weatherData))))
                         .orElseThrow((Supplier<RuntimeException>) () ->
                             new UserReadableException(resources.getString(R.string.try_another_city_name)));
-                }));
+                }))
+            .doOnNext(dataRepositoryEvent -> dataRepositoryEvent
+                .mapAndDo(data -> weatherMemoryRepository.addWeatherData(data)));
     }
 }
